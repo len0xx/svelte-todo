@@ -31,14 +31,4 @@ test.describe('two tests', () => {
 
 		await expect(heading).toHaveText('0 out of 1 items completed')
 	})
-
-	test('attempt to click the unexistent button', async ({ page }) => {
-		const nonexistent = page.getByText('Nonexistent element', { exact: true })
-
-		await nonexistent.click()
-
-		const heading = page.locator('#list-heading')
-
-		await expect(heading).toHaveText('2 out of 2 items completed')
-	})
 })
